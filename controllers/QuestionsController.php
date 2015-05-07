@@ -19,7 +19,7 @@ class QuestionsController extends BaseController {
         $from = $page * $pageSize;
         $this->page = $page;
         $this->pageSize = $pageSize;
-        $this->questions = $this->db->getFilteredBooks($from, $pageSize);
+        $this->questions = $this->db->getFilteredQuestions($from, $pageSize);
 
         $this->renderView();
 
@@ -30,4 +30,55 @@ class QuestionsController extends BaseController {
         $this->renderView(__FUNCTION__, false);
 
     }
+
+    public function showAnswers($id) {
+        $this->authorize();
+
+
+        if ($this->db->getAnswers($id)) {
+            $this->addInfoMessage("Category deleted.");
+        } else {
+            $this->addErrorMessage("Cannot delete category.");
+        }
+        //$this->redirect('categories');
+    }
+
+    public function delete($id) {
+        $this->authorize();
+
+
+        if ($this->db->deleteQuestion($id)) {
+            $this->addInfoMessage("Question deleted.");
+        } else {
+            $this->addErrorMessage("Cannot delete question.");
+        }
+        $this->redirect('questions');
+    }
+
+    public function create() {
+        $this->authorize();
+
+
+        if ($this->isPost) {
+            $name = $_POST['question_name'];
+
+            if (strlen($name) < 2) {
+                $this->addFieldValue('question_name', $name);
+                $this->addValidationError('question_name', 'The question name length should be greater than 2');
+                return $this->renderView(__FUNCTION__);
+
+            }
+
+            if ($this->db->createQuestion($name)) {
+                $this->addInfoMessage("Question created.");
+                $this->redirect('questions');
+            } else {
+                $this->addErrorMessage("Error creating question.");
+            }
+        }
+
+        $this->renderView(__FUNCTION__);
+    }
+
 }
+
