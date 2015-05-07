@@ -55,6 +55,33 @@ class QuestionsController extends BaseController {
         $this->redirect('questions');
     }
 
+    public function comment($id) {
+        $this->authorize();
+        if ($this->isPost) {
+            $name = $_POST['comment_name'];
+
+            if (strlen($name) < 2) {
+                $this->addFieldValue('comment_name', $name);
+                $this->addValidationError('comment_name', 'The comment name length should be greater than 2');
+                $this->redirect('questions');
+
+            }
+
+            var_dump($id);
+
+            if ($this->db->createAnswer($name, $id)) {
+                $this->addInfoMessage("Comment created.");
+                $this->redirect('questions');
+            } else {
+                $this->addErrorMessage("Error creating comment.");
+            }
+        }
+
+        $this->redirect('questions');
+
+
+    }
+
     public function create() {
         $this->authorize();
 

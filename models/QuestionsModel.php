@@ -26,7 +26,7 @@ class QuestionsModel extends  BaseModel {
         $statement->bind_param("ii", $from, $size);
         $statement->execute();
         $result = $statement->get_result()->fetch_all();
-        //var_dump($result);
+        var_dump($result);
         return $result;
     }
 
@@ -55,6 +55,17 @@ class QuestionsModel extends  BaseModel {
         $statement = self::$db->prepare(
             "INSERT INTO questions VALUES(NULL, ?, NULL, NULL, NULL)");
         $statement->bind_param("s", $name);
+        $statement->execute();
+        return $statement->affected_rows > 0;
+    }
+
+    public function createAnswer($name, $id) {
+        if ($name == '') {
+            return false;
+        }
+        $statement = self::$db->prepare(
+            "INSERT INTO answers VALUES(NULL, ?, NULL, NULL, ?)");
+        $statement->bind_param("si", $name, $id);
         $statement->execute();
         return $statement->affected_rows > 0;
     }

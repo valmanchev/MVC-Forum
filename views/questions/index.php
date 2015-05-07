@@ -16,8 +16,13 @@
             <td><?php echo $question[2] ?></td>
             <td><?php echo $question[3] ?></td>
             <td><?php echo $question[4] ?></td>
-            <td><a href="/questions/delete/<?=$question['id']?> ">[Delete]</a></td>
-            <td><a href="/questions/delete/<?=$question['id']?> ">[Delete]</a></td>
+            <td><a href="/questions/delete/<?=$question[0]?> ">[Delete]</a></td>
+            <td><form method="post" action="/questions/comment/<?=$question[0]?>">
+                <input type="text" name="comment_name" value="<?php echo $this->getFieldValue('comment_name'); ?>">
+                <?php echo $this->getValidationError('comment_name'); ?>
+                <br/>
+                <input type="submit" value="Comment">
+            </form></td>
         </tr>
 
 
