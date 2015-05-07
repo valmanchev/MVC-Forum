@@ -55,3 +55,20 @@ h1 {
 a {
     text-decoration: none;
 }
+
+.category {
+    height: 55pt;
+    margin-bottom: 15pt;
+}
+
+footer {
+    margin-top: 55pt;
+}
+
+form {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}

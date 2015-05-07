@@ -89,6 +89,7 @@ class QuestionsController extends BaseController {
             if (strlen($name) < 2) {
                 $this->addFieldValue('comment_name', $name);
                 $this->addValidationError('comment_name', 'The comment length should be greater than 2');
+
                 return $this->renderView(__FUNCTION__);
             }
 
