@@ -17,6 +17,7 @@
             <?php if ($this->isLoggedIn) : ?>
             <li><a href="/questions">Questions</a></li>
 
+
             <?php endif; ?>
 
         </ul>
@@ -28,7 +29,7 @@
         </div>
         <?php endif; ?>
     </header>
+    <!--    <?php var_dump($this->isLoggedIn) ?>-->
 
-    <?php var_dump($this->isLoggedIn) ?>
 
     <?php include('messages.php'); ?>

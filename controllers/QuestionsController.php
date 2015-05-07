@@ -9,7 +9,7 @@ class QuestionsController extends BaseController {
 
     }
 
-    public function index($page = 0, $pageSize = 10) {
+    public function index($page = 0, $pageSize = 5) {
         //var_dump($page);
         //var_dump($pageSize);
 
@@ -55,32 +55,7 @@ class QuestionsController extends BaseController {
         $this->redirect('questions');
     }
 
-    public function comment($id) {
-        $this->authorize();
-        if ($this->isPost) {
-            $name = $_POST['comment_name'];
 
-            if (strlen($name) < 2) {
-                $this->addFieldValue('comment_name', $name);
-                $this->addValidationError('comment_name', 'The comment name length should be greater than 2');
-                $this->redirect('questions');
-
-            }
-
-            var_dump($id);
-
-            if ($this->db->createAnswer($name, $id)) {
-                $this->addInfoMessage("Comment created.");
-                $this->redirect('questions');
-            } else {
-                $this->addErrorMessage("Error creating comment.");
-            }
-        }
-
-        $this->redirect('questions');
-
-
-    }
 
     public function create() {
         $this->authorize();
@@ -106,6 +81,42 @@ class QuestionsController extends BaseController {
 
         $this->renderView(__FUNCTION__);
     }
+
+
+    public function comment() {
+        $this->authorize();
+
+
+        if ($this->isPost) {
+            $name = $_POST['question_name'];
+
+            if (strlen($name) < 2) {
+                $this->addFieldValue('question_name', $name);
+                $this->addValidationError('question_name', 'The question name length should be greater than 2');
+                return $this->renderView(__FUNCTION__);
+
+            }
+
+            if ($this->db->createQuestion($name)) {
+                $this->addInfoMessage("Question created.");
+                $this->redirect('questions');
+            } else {
+                $this->addErrorMessage("Error creating question.");
+            }
+        }
+
+        $this->renderView(__FUNCTION__);
+    }
+
+    public function answers($id) {
+        $this->authorize();
+
+        $this->answers = $this->db->getAnswers($id);
+        //$this->redirect('/account/logout');
+
+        $this->renderView(__FUNCTION__);
+    }
+
 
 }
 

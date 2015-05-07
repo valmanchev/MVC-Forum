@@ -22,22 +22,28 @@ class QuestionsModel extends  BaseModel {
                                         JOIN categories c
                                         ON q.category_id = c.id
                                         JOIN tags t
-                                        ON q.tag_id = t.id LIMIT ?, ?");
+                                        ON q.tag_id = t.id
+                                        ORDER BY id DESC LIMIT ?, ?");
         $statement->bind_param("ii", $from, $size);
         $statement->execute();
         $result = $statement->get_result()->fetch_all();
-        var_dump($result);
+        //var_dump($result);
         return $result;
     }
 
     public function getAnswers($id) {
-        $statement = self::$db->query(
-            "SELECT * FROM answers ORDER BY id WHERE question_id = ?");
+        $statement = self::$db->prepare(
+            "SELECT * FROM answers WHERE question_id = ?");
+        //var_dump($id);
         $statement->bind_param("i", $id);
         $statement->execute();
         $result = $statement->get_result()->fetch_all();
-
+        //var_dump($result);
+        $this->answers = $result;
+        //var_dump($this->answers);
         return $result;
+
+
     }
 
     public function deleteQuestion($id) {
@@ -63,6 +69,8 @@ class QuestionsModel extends  BaseModel {
         if ($name == '') {
             return false;
         }
+        var_dump($name);
+
         $statement = self::$db->prepare(
             "INSERT INTO answers VALUES(NULL, ?, NULL, NULL, ?)");
         $statement->bind_param("si", $name, $id);

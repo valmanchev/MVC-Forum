@@ -39,5 +39,22 @@ li.error {
 header ul {
     display: inline-block;
     vertical-align: middle;
+}
+div {
+    background-color: #eeeeee;
+}
+
+h1 {
+    text-align: center;
+}
+
+.right {
+    float: right;
 
 }
+
+a {
+    text-decoration: none;
+
+}
+
