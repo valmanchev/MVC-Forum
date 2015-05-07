@@ -1,5 +1,4 @@
 <h1>Login</h1>
-
 <form action="/account/login" method="post">
     <label for="username">Username:</label>
     <input id="username" type="text" name="username"/>

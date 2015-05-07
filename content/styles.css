@@ -29,7 +29,6 @@ li.error {
 #logged-in-info {
     float: right;
     display: inline-block;
-
 }
 
 #logged-in-info form {
@@ -40,6 +39,7 @@ header ul {
     display: inline-block;
     vertical-align: middle;
 }
+
 div {
     background-color: #eeeeee;
 }
@@ -50,11 +50,8 @@ h1 {
 
 .right {
     float: right;
-
 }
 
 a {
     text-decoration: none;
-
 }
-

@@ -11,13 +11,13 @@ abstract class BaseController {
 
     function __construct($controllerName) {
         $this->controllerName = $controllerName;
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->isPost = true;
         }
 
         if (isset($_SESSION['username'])) {
             $this->isLoggedIn = true;
-
         }
 
         $this->onInit();
@@ -33,17 +33,20 @@ abstract class BaseController {
 
     public function renderView($viewName = "Index", $includeLayout = true) {
         if (!$this->isViewRendered) {
-            $viewFileName = 'views/' . $this->controllerName
-                . '/' . $viewName . '.php';
+            $viewFileName = 'views/' . $this->controllerName . '/' . $viewName . '.php';
+
             if ($includeLayout) {
                 $headerFile = 'views/layouts/' . $this->layoutName . '/header.php';
                 include_once($headerFile);
             }
+
             include_once($viewFileName);
+
             if ($includeLayout) {
                 $footerFile = 'views/layouts/' . $this->layoutName . '/footer.php';
                 include_once($footerFile);
             }
+
             $this->isViewRendered = true;
         }
     }
@@ -55,13 +58,16 @@ abstract class BaseController {
 
     public function redirect($controllerName, $actionName = null, $params = null) {
         $url = '/' . urlencode($controllerName);
+
         if ($actionName != null) {
             $url .= '/' . urlencode($actionName);
         }
+
         if ($params != null) {
             $encodedParams = array_map($params, 'urlencode');
             $url .= implode('/', $encodedParams);
         }
+
         $this->redirectToUrl($url);
     }
 
@@ -69,7 +75,6 @@ abstract class BaseController {
         if (! $this->isLoggedIn) {
             $this->addErrorMessage("Please login first");
              $this->redirect("account", "login");
-
         }
     }
 
@@ -93,8 +98,8 @@ abstract class BaseController {
         if (!isset($_SESSION['messages'])) {
             $_SESSION['messages'] = array();
         };
-        array_push($_SESSION['messages'],
-            array('text' => $msg, 'type' => $type));
+
+        array_push($_SESSION['messages'], array('text' => $msg, 'type' => $type));
     }
 
     function addInfoMessage($msg) {
@@ -104,6 +109,4 @@ abstract class BaseController {
     function addErrorMessage($msg) {
         $this->addMessage($msg, 'error');
     }
-
-
 }

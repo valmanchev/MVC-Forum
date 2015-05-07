@@ -10,15 +10,12 @@ class CategoriesController extends BaseController {
 
     public function index() {
         $this->authorize();
-
         $this->categories = $this->db->getAll();
-
         $this->renderView();
     }
 
     public function create() {
         $this->authorize();
-
 
         if ($this->isPost) {
             $name = $_POST['category_name'];
@@ -27,7 +24,6 @@ class CategoriesController extends BaseController {
                 $this->addFieldValue('category_name', $name);
                 $this->addValidationError('category_name', 'The category name length should be greater than 2');
                 return $this->renderView(__FUNCTION__);
-
             }
 
             if ($this->db->createCategory($name)) {
@@ -43,7 +39,6 @@ class CategoriesController extends BaseController {
 
     public function delete($id) {
         $this->authorize();
-
 
         if ($this->db->deleteCategory($id)) {
             $this->addInfoMessage("Category deleted.");

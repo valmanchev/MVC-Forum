@@ -1,6 +1,4 @@
 <h1>Register</h1>
-
-
 <form action="/account/register" method="post">
     <label for="username">Username:</label>
     <input id="username" type="text" name="username"/>
@@ -10,5 +8,4 @@
     <br/>
     <input type="submit" value="Register"/>
     <a href="/account/login">Go login</a>
-
 </form>

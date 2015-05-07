@@ -8,17 +8,15 @@ class AccountController extends BaseController {
     }
 
     public function register() {
-        //$this->db->register();
-
-        //var_dump($_POST);
-
         if ($this->isPost) {
             //get username
             $username = $_POST['username'];
+
             if ($username == null || strlen($username) < 8) {
                 $this->addErrorMessage("Username is invalid!");
                 $this->redirect("account", "register");
             }
+
             //get password
             $password = $_POST['password'];
 
@@ -29,7 +27,6 @@ class AccountController extends BaseController {
             if ($isRegistered) {
                 $_SESSION['username'] = $username;
                 $this->addInfoMessage("Successful registration!");
-
                 $this->redirect("questions", "index");
             }
             else {
@@ -38,7 +35,6 @@ class AccountController extends BaseController {
         }
 
         $this->renderView(__FUNCTION__);
-
     }
 
     public function login() {
@@ -46,31 +42,25 @@ class AccountController extends BaseController {
             $username = $_POST['username'];
             $password = $_POST['password'];
             $isLoggedIn = $this->db->login($username, $password);
-            //var_dump($isLoggedIn);
+
             if ($isLoggedIn) {
                 $_SESSION['username'] = $username;
-
                 $this->addInfoMessage("Successful login!");
+
                 return $this->redirect("books", "index");
             }
             else {
                 $this->addErrorMessage("Login error!");
-
             }
         }
-
-        //var_dump($isLoggedIn);
 
         $this->renderView(__FUNCTION__);
     }
 
     public function logout() {
         $this->authorize();
-
-
         unset($_SESSION['username']);
         $this->addInfoMessage("Successful logout!");
         $this->redirectToUrl("/");
-
     }
 }

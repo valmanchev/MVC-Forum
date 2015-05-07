@@ -1,5 +1,4 @@
 <h1><?= htmlspecialchars($this->title) ?></h1>
-
 <table>
     <tr>
         <th>Id</th>
@@ -14,5 +13,4 @@
         </tr>
     <?php endforeach ?>
 </table>
-
 <a href="/categories/create">[New]</a>
