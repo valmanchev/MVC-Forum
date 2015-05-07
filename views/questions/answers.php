@@ -1,8 +1,8 @@
 <h1>Answers</h1>
-<?php foreach($this->answers as $question) : ?>
+<?php foreach($this->answers as $answer) : ?>
     <div>
-        <h2><div><?php echo $question[0] ?>. <?php echo $question[1] ?></div></h2>
-        <a class="right" href="/questions/delete/<?=$question[0]?> ">Delete</a>
-        Category: <b><?php echo $question[3] ?></b> Tag: <b><?php echo $question[4] ?></b>
+        <h2><div><?php echo $answer[0] ?>. <?php echo $answer[1] ?></div></h2>
+        <a class="right" href="/questions/deleteAnswer/<?=$answer[0]?> ">Delete</a>
+        Author: <b><?php echo $answer[2] ?></b> Email: <b><?php echo $answer[3] ?></b>
     </div>
 <?php endforeach; ?>

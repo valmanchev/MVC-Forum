@@ -29,7 +29,7 @@ class QuestionsModel extends  BaseModel {
     }
 
     public function getAnswers($id) {
-        $statement = self::$db->prepare("SELECT * FROM answers WHERE question_id = ?");
+        $statement = self::$db->prepare("SELECT * FROM answers WHERE question_id = ? ORDER BY id DESC");
         $statement->bind_param("i", $id);
         $statement->execute();
         $result = $statement->get_result()->fetch_all();
@@ -40,6 +40,14 @@ class QuestionsModel extends  BaseModel {
 
     public function deleteQuestion($id) {
         $statement = self::$db->prepare("DELETE FROM questions WHERE id = ?");
+        $statement->bind_param("i", $id);
+        $statement->execute();
+
+        return $statement->affected_rows > 0;
+    }
+
+    public function deleteAnswer($id) {
+        $statement = self::$db->prepare("DELETE FROM answers WHERE id = ?");
         $statement->bind_param("i", $id);
         $statement->execute();
 

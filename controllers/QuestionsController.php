@@ -44,6 +44,18 @@ class QuestionsController extends BaseController {
         $this->redirect('questions');
     }
 
+    public function deleteAnswer($id) {
+        $this->authorize();
+
+        if ($this->db->deleteAnswer($id)) {
+            $this->addInfoMessage("Comment deleted.");
+        } else {
+            $this->addErrorMessage("Cannot delete comment.");
+        }
+
+        $this->redirect('questions');
+    }
+
     public function create() {
         $this->authorize();
 
