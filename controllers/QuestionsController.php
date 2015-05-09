@@ -11,7 +11,19 @@ class QuestionsController extends BaseController {
     public function index($page = 0, $pageSize = 5) {
         $this->authorize();
         $from = $page * $pageSize;
+
+        $pages = count($this->db->getAll());
+        $pages = $pages / $pageSize;
+        $pages = ceil($pages);
+
+
+
+
+
+
+
         $this->page = $page;
+
         $this->pageSize = $pageSize;
         $this->questions = $this->db->getFilteredQuestions($from, $pageSize);
         $this->renderView();
@@ -88,10 +100,12 @@ class QuestionsController extends BaseController {
 
             if (strlen($name) < 2) {
                 $this->addFieldValue('comment_name', $name);
-                $this->addValidationError('comment_name', 'The comment length should be greater than 2');
+                $this->addValidationError('comment_name', 'The name length should be greater than 2');
 
                 return $this->renderView(__FUNCTION__);
             }
+
+
 
             if ($this->db->createComment($name, $id)) {
                 $this->addInfoMessage("Comment created.");

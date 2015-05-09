@@ -61,11 +61,11 @@ a {
     margin-bottom: 15pt;
 }
 
-footer {
+footer, .nav {
     margin-top: 55pt;
 }
 
-form {
+form, .center {
     text-align: center;
 }
 

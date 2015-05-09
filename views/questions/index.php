@@ -7,6 +7,6 @@
             Category: <b><?php echo $question[3] ?></b> Tag: <b><?php echo $question[4] ?></b>
         </div>
     <?php endforeach; ?>
-<a href="/questions/index/<?= $this->page - 1 ?>/<?= $this->pageSize ?>">Previous</a>
+<h3><a href="/questions/index/<?= $this->page - 1 ?>/<?= $this->pageSize ?>">Previous</a> |
 <a href="/questions/index/<?= $this->page + 1 ?>/<?= $this->pageSize ?>">Next</a>
-<a href="/questions/create" class="right">New</a>
+<a href="/questions/create" class="right">New</a></h3>

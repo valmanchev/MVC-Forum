@@ -26,4 +26,14 @@ class CategoriesModel extends BaseModel {
 
         return $statement->affected_rows > 0;
     }
+
+    public function getQuestions($id) {
+        $statement = self::$db->prepare("SELECT * FROM questions WHERE category_id = ? ORDER BY id DESC");
+        $statement->bind_param("i", $id);
+        $statement->execute();
+        $result = $statement->get_result()->fetch_all();
+        $this->answers = $result;
+
+        return $result;
+    }
 }

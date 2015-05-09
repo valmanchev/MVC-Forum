@@ -47,4 +47,10 @@ class CategoriesController extends BaseController {
         }
         $this->redirect('categories');
     }
+
+    public function questions($id) {
+        $this->authorize();
+        $this->questions = $this->db->getQuestions($id);
+        $this->renderView(__FUNCTION__);
+    }
 }
