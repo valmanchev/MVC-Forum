@@ -16,14 +16,7 @@ class QuestionsController extends BaseController {
         $pages = $pages / $pageSize;
         $pages = ceil($pages);
 
-
-
-
-
-
-
         $this->page = $page;
-
         $this->pageSize = $pageSize;
         $this->questions = $this->db->getFilteredQuestions($from, $pageSize);
         $this->renderView();
@@ -104,8 +97,6 @@ class QuestionsController extends BaseController {
 
                 return $this->renderView(__FUNCTION__);
             }
-
-
 
             if ($this->db->createComment($name, $id)) {
                 $this->addInfoMessage("Comment created.");

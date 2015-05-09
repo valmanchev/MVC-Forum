@@ -11,6 +11,7 @@ class QuestionsModel extends  BaseModel {
                                         ORDER BY id DESC");
         $statement->execute();
         $result = $statement->get_result()->fetch_all();
+
         return $result;
     }
 

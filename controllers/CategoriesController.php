@@ -45,6 +45,7 @@ class CategoriesController extends BaseController {
         } else {
             $this->addErrorMessage("Cannot delete category.");
         }
+
         $this->redirect('categories');
     }
 
