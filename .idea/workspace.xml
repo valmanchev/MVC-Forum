@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/models/QuestionsModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.5" vertical-offset="120" max-vertical-offset="1496">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="28" selection-end-column="23" />
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="22" selection-end-column="62" />
               <folding>
                 <marker date="1431179355659" expanded="true" signature="122:515" placeholder="SELECT q.id,..questions..." />
                 <marker date="1431179355659" expanded="true" signature="736:1164" placeholder="SELECT q.id,..questions..." />
@@ -66,13 +66,13 @@
       <file leaf-file-name="CategoriesModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/CategoriesModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8345021" vertical-offset="0" max-vertical-offset="748">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8345021" vertical-offset="0" max-vertical-offset="833">
+              <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
               <folding>
-                <marker date="1431183663631" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
-                <marker date="1431183663631" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
-                <marker date="1431183663631" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
-                <marker date="1431183663631" expanded="true" signature="869:931" placeholder="SELECT * FRO..questions..." />
+                <marker date="1431183875460" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
+                <marker date="1431183875460" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
+                <marker date="1431183875460" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
+                <marker date="1431183875460" expanded="true" signature="869:1266" placeholder="SELECT q.id,..questions..." />
               </folding>
             </state>
           </provider>
@@ -535,10 +535,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="578">
           <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
           <folding>
-            <marker date="1431183663631" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
-            <marker date="1431183663631" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
-            <marker date="1431183663631" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
-            <marker date="1431183663631" expanded="true" signature="869:931" placeholder="SELECT * FRO..questions..." />
+            <marker date="1431183875460" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
+            <marker date="1431183875460" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
+            <marker date="1431183875460" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
+            <marker date="1431183875460" expanded="true" signature="869:1266" placeholder="SELECT q.id,..questions..." />
           </folding>
         </state>
       </provider>
@@ -632,10 +632,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="578">
           <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding>
-            <marker date="1431183663631" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
-            <marker date="1431183663631" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
-            <marker date="1431183663631" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
-            <marker date="1431183663631" expanded="true" signature="869:931" placeholder="SELECT * FRO..questions..." />
+            <marker date="1431183875460" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
+            <marker date="1431183875460" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
+            <marker date="1431183875460" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
+            <marker date="1431183875460" expanded="true" signature="869:1266" placeholder="SELECT q.id,..questions..." />
           </folding>
         </state>
       </provider>
@@ -698,10 +698,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="578">
           <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding>
-            <marker date="1431183663631" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
-            <marker date="1431183663631" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
-            <marker date="1431183663631" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
-            <marker date="1431183663631" expanded="true" signature="869:931" placeholder="SELECT * FRO..questions..." />
+            <marker date="1431183875460" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
+            <marker date="1431183875460" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
+            <marker date="1431183875460" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
+            <marker date="1431183875460" expanded="true" signature="869:1266" placeholder="SELECT q.id,..questions..." />
           </folding>
         </state>
       </provider>
@@ -913,7 +913,7 @@
     <entry file="file://$PROJECT_DIR$/models/QuestionsModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5" vertical-offset="120" max-vertical-offset="1496">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="28" selection-end-column="23" />
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="22" selection-end-column="62" />
           <folding>
             <marker date="1431179355659" expanded="true" signature="122:515" placeholder="SELECT q.id,..questions..." />
             <marker date="1431179355659" expanded="true" signature="736:1164" placeholder="SELECT q.id,..questions..." />
@@ -928,13 +928,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/CategoriesModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8345021" vertical-offset="0" max-vertical-offset="748">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8345021" vertical-offset="0" max-vertical-offset="833">
+          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
           <folding>
-            <marker date="1431183663631" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
-            <marker date="1431183663631" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
-            <marker date="1431183663631" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
-            <marker date="1431183663631" expanded="true" signature="869:931" placeholder="SELECT * FRO..questions..." />
+            <marker date="1431183875460" expanded="true" signature="119:155" placeholder="SELECT * FRO..categories..." />
+            <marker date="1431183875460" expanded="true" signature="368:406" placeholder="INSERT INTO ..." />
+            <marker date="1431183875460" expanded="true" signature="622:657" placeholder="DELETE FROM ..." />
+            <marker date="1431183875460" expanded="true" signature="869:1266" placeholder="SELECT q.id,..questions..." />
           </folding>
         </state>
       </provider>
